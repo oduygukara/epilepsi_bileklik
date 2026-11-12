@@ -1,0 +1,116 @@
+#!/bin/bash
+# indir_seizeit2.sh — SeizeIT2: tonik-klonik (FBTC) nöbet içeren 53 kaydın EKG ve hareket dosyalarını indirir.
+# Kullanım (epilepsi_veri klasöründe):  bash indir_seizeit2.sh
+# Tahmini boyut: 2–3 GB. İnternet hızına göre 10–40 dakika sürebilir.
+
+aws s3 sync --no-sign-request s3://openneuro.org/ds005873 seizeit2 --exclude "*" \
+  --include "sub-015/ses-01/ecg/sub-015_ses-01_task-szMonitoring_run-04_ecg.*" \
+  --include "sub-015/ses-01/mov/sub-015_ses-01_task-szMonitoring_run-04_mov.*" \
+  --include "sub-016/ses-01/ecg/sub-016_ses-01_task-szMonitoring_run-03_ecg.*" \
+  --include "sub-016/ses-01/mov/sub-016_ses-01_task-szMonitoring_run-03_mov.*" \
+  --include "sub-017/ses-01/ecg/sub-017_ses-01_task-szMonitoring_run-01_ecg.*" \
+  --include "sub-017/ses-01/mov/sub-017_ses-01_task-szMonitoring_run-01_mov.*" \
+  --include "sub-019/ses-01/ecg/sub-019_ses-01_task-szMonitoring_run-07_ecg.*" \
+  --include "sub-019/ses-01/mov/sub-019_ses-01_task-szMonitoring_run-07_mov.*" \
+  --include "sub-023/ses-01/ecg/sub-023_ses-01_task-szMonitoring_run-03_ecg.*" \
+  --include "sub-023/ses-01/mov/sub-023_ses-01_task-szMonitoring_run-03_mov.*" \
+  --include "sub-024/ses-01/ecg/sub-024_ses-01_task-szMonitoring_run-01_ecg.*" \
+  --include "sub-024/ses-01/mov/sub-024_ses-01_task-szMonitoring_run-01_mov.*" \
+  --include "sub-024/ses-01/ecg/sub-024_ses-01_task-szMonitoring_run-07_ecg.*" \
+  --include "sub-024/ses-01/mov/sub-024_ses-01_task-szMonitoring_run-07_mov.*" \
+  --include "sub-025/ses-01/ecg/sub-025_ses-01_task-szMonitoring_run-04_ecg.*" \
+  --include "sub-025/ses-01/mov/sub-025_ses-01_task-szMonitoring_run-04_mov.*" \
+  --include "sub-027/ses-01/ecg/sub-027_ses-01_task-szMonitoring_run-07_ecg.*" \
+  --include "sub-027/ses-01/mov/sub-027_ses-01_task-szMonitoring_run-07_mov.*" \
+  --include "sub-029/ses-01/ecg/sub-029_ses-01_task-szMonitoring_run-08_ecg.*" \
+  --include "sub-029/ses-01/mov/sub-029_ses-01_task-szMonitoring_run-08_mov.*" \
+  --include "sub-031/ses-01/ecg/sub-031_ses-01_task-szMonitoring_run-03_ecg.*" \
+  --include "sub-031/ses-01/mov/sub-031_ses-01_task-szMonitoring_run-03_mov.*" \
+  --include "sub-032/ses-01/ecg/sub-032_ses-01_task-szMonitoring_run-05_ecg.*" \
+  --include "sub-032/ses-01/mov/sub-032_ses-01_task-szMonitoring_run-05_mov.*" \
+  --include "sub-046/ses-01/ecg/sub-046_ses-01_task-szMonitoring_run-01_ecg.*" \
+  --include "sub-046/ses-01/mov/sub-046_ses-01_task-szMonitoring_run-01_mov.*" \
+  --include "sub-049/ses-01/ecg/sub-049_ses-01_task-szMonitoring_run-02_ecg.*" \
+  --include "sub-049/ses-01/mov/sub-049_ses-01_task-szMonitoring_run-02_mov.*" \
+  --include "sub-054/ses-01/ecg/sub-054_ses-01_task-szMonitoring_run-04_ecg.*" \
+  --include "sub-054/ses-01/mov/sub-054_ses-01_task-szMonitoring_run-04_mov.*" \
+  --include "sub-058/ses-01/ecg/sub-058_ses-01_task-szMonitoring_run-02_ecg.*" \
+  --include "sub-058/ses-01/mov/sub-058_ses-01_task-szMonitoring_run-02_mov.*" \
+  --include "sub-059/ses-01/ecg/sub-059_ses-01_task-szMonitoring_run-02_ecg.*" \
+  --include "sub-059/ses-01/mov/sub-059_ses-01_task-szMonitoring_run-02_mov.*" \
+  --include "sub-064/ses-01/ecg/sub-064_ses-01_task-szMonitoring_run-01_ecg.*" \
+  --include "sub-064/ses-01/mov/sub-064_ses-01_task-szMonitoring_run-01_mov.*" \
+  --include "sub-068/ses-01/ecg/sub-068_ses-01_task-szMonitoring_run-05_ecg.*" \
+  --include "sub-068/ses-01/mov/sub-068_ses-01_task-szMonitoring_run-05_mov.*" \
+  --include "sub-068/ses-01/ecg/sub-068_ses-01_task-szMonitoring_run-06_ecg.*" \
+  --include "sub-068/ses-01/mov/sub-068_ses-01_task-szMonitoring_run-06_mov.*" \
+  --include "sub-069/ses-01/ecg/sub-069_ses-01_task-szMonitoring_run-33_ecg.*" \
+  --include "sub-069/ses-01/mov/sub-069_ses-01_task-szMonitoring_run-33_mov.*" \
+  --include "sub-070/ses-01/ecg/sub-070_ses-01_task-szMonitoring_run-12_ecg.*" \
+  --include "sub-070/ses-01/mov/sub-070_ses-01_task-szMonitoring_run-12_mov.*" \
+  --include "sub-070/ses-01/ecg/sub-070_ses-01_task-szMonitoring_run-14_ecg.*" \
+  --include "sub-070/ses-01/mov/sub-070_ses-01_task-szMonitoring_run-14_mov.*" \
+  --include "sub-073/ses-01/ecg/sub-073_ses-01_task-szMonitoring_run-37_ecg.*" \
+  --include "sub-073/ses-01/mov/sub-073_ses-01_task-szMonitoring_run-37_mov.*" \
+  --include "sub-073/ses-01/ecg/sub-073_ses-01_task-szMonitoring_run-39_ecg.*" \
+  --include "sub-073/ses-01/mov/sub-073_ses-01_task-szMonitoring_run-39_mov.*" \
+  --include "sub-078/ses-01/ecg/sub-078_ses-01_task-szMonitoring_run-26_ecg.*" \
+  --include "sub-078/ses-01/mov/sub-078_ses-01_task-szMonitoring_run-26_mov.*" \
+  --include "sub-079/ses-01/ecg/sub-079_ses-01_task-szMonitoring_run-01_ecg.*" \
+  --include "sub-079/ses-01/mov/sub-079_ses-01_task-szMonitoring_run-01_mov.*" \
+  --include "sub-080/ses-01/ecg/sub-080_ses-01_task-szMonitoring_run-15_ecg.*" \
+  --include "sub-080/ses-01/mov/sub-080_ses-01_task-szMonitoring_run-15_mov.*" \
+  --include "sub-083/ses-01/ecg/sub-083_ses-01_task-szMonitoring_run-32_ecg.*" \
+  --include "sub-083/ses-01/mov/sub-083_ses-01_task-szMonitoring_run-32_mov.*" \
+  --include "sub-085/ses-01/ecg/sub-085_ses-01_task-szMonitoring_run-42_ecg.*" \
+  --include "sub-085/ses-01/mov/sub-085_ses-01_task-szMonitoring_run-42_mov.*" \
+  --include "sub-093/ses-01/ecg/sub-093_ses-01_task-szMonitoring_run-63_ecg.*" \
+  --include "sub-093/ses-01/mov/sub-093_ses-01_task-szMonitoring_run-63_mov.*" \
+  --include "sub-096/ses-01/ecg/sub-096_ses-01_task-szMonitoring_run-30_ecg.*" \
+  --include "sub-096/ses-01/mov/sub-096_ses-01_task-szMonitoring_run-30_mov.*" \
+  --include "sub-098/ses-01/ecg/sub-098_ses-01_task-szMonitoring_run-03_ecg.*" \
+  --include "sub-098/ses-01/mov/sub-098_ses-01_task-szMonitoring_run-03_mov.*" \
+  --include "sub-103/ses-01/ecg/sub-103_ses-01_task-szMonitoring_run-07_ecg.*" \
+  --include "sub-103/ses-01/mov/sub-103_ses-01_task-szMonitoring_run-07_mov.*" \
+  --include "sub-109/ses-01/ecg/sub-109_ses-01_task-szMonitoring_run-07_ecg.*" \
+  --include "sub-109/ses-01/mov/sub-109_ses-01_task-szMonitoring_run-07_mov.*" \
+  --include "sub-110/ses-01/ecg/sub-110_ses-01_task-szMonitoring_run-08_ecg.*" \
+  --include "sub-110/ses-01/mov/sub-110_ses-01_task-szMonitoring_run-08_mov.*" \
+  --include "sub-115/ses-01/ecg/sub-115_ses-01_task-szMonitoring_run-09_ecg.*" \
+  --include "sub-115/ses-01/mov/sub-115_ses-01_task-szMonitoring_run-09_mov.*" \
+  --include "sub-115/ses-01/ecg/sub-115_ses-01_task-szMonitoring_run-12_ecg.*" \
+  --include "sub-115/ses-01/mov/sub-115_ses-01_task-szMonitoring_run-12_mov.*" \
+  --include "sub-115/ses-01/ecg/sub-115_ses-01_task-szMonitoring_run-49_ecg.*" \
+  --include "sub-115/ses-01/mov/sub-115_ses-01_task-szMonitoring_run-49_mov.*" \
+  --include "sub-115/ses-01/ecg/sub-115_ses-01_task-szMonitoring_run-52_ecg.*" \
+  --include "sub-115/ses-01/mov/sub-115_ses-01_task-szMonitoring_run-52_mov.*" \
+  --include "sub-115/ses-01/ecg/sub-115_ses-01_task-szMonitoring_run-55_ecg.*" \
+  --include "sub-115/ses-01/mov/sub-115_ses-01_task-szMonitoring_run-55_mov.*" \
+  --include "sub-115/ses-01/ecg/sub-115_ses-01_task-szMonitoring_run-57_ecg.*" \
+  --include "sub-115/ses-01/mov/sub-115_ses-01_task-szMonitoring_run-57_mov.*" \
+  --include "sub-116/ses-01/ecg/sub-116_ses-01_task-szMonitoring_run-18_ecg.*" \
+  --include "sub-116/ses-01/mov/sub-116_ses-01_task-szMonitoring_run-18_mov.*" \
+  --include "sub-116/ses-01/ecg/sub-116_ses-01_task-szMonitoring_run-19_ecg.*" \
+  --include "sub-116/ses-01/mov/sub-116_ses-01_task-szMonitoring_run-19_mov.*" \
+  --include "sub-116/ses-01/ecg/sub-116_ses-01_task-szMonitoring_run-24_ecg.*" \
+  --include "sub-116/ses-01/mov/sub-116_ses-01_task-szMonitoring_run-24_mov.*" \
+  --include "sub-116/ses-01/ecg/sub-116_ses-01_task-szMonitoring_run-26_ecg.*" \
+  --include "sub-116/ses-01/mov/sub-116_ses-01_task-szMonitoring_run-26_mov.*" \
+  --include "sub-116/ses-01/ecg/sub-116_ses-01_task-szMonitoring_run-27_ecg.*" \
+  --include "sub-116/ses-01/mov/sub-116_ses-01_task-szMonitoring_run-27_mov.*" \
+  --include "sub-121/ses-01/ecg/sub-121_ses-01_task-szMonitoring_run-64_ecg.*" \
+  --include "sub-121/ses-01/mov/sub-121_ses-01_task-szMonitoring_run-64_mov.*" \
+  --include "sub-121/ses-01/ecg/sub-121_ses-01_task-szMonitoring_run-66_ecg.*" \
+  --include "sub-121/ses-01/mov/sub-121_ses-01_task-szMonitoring_run-66_mov.*" \
+  --include "sub-121/ses-01/ecg/sub-121_ses-01_task-szMonitoring_run-80_ecg.*" \
+  --include "sub-121/ses-01/mov/sub-121_ses-01_task-szMonitoring_run-80_mov.*" \
+  --include "sub-124/ses-01/ecg/sub-124_ses-01_task-szMonitoring_run-47_ecg.*" \
+  --include "sub-124/ses-01/mov/sub-124_ses-01_task-szMonitoring_run-47_mov.*" \
+  --include "sub-125/ses-01/ecg/sub-125_ses-01_task-szMonitoring_run-21_ecg.*" \
+  --include "sub-125/ses-01/mov/sub-125_ses-01_task-szMonitoring_run-21_mov.*" \
+  --include "sub-125/ses-01/ecg/sub-125_ses-01_task-szMonitoring_run-37_ecg.*" \
+  --include "sub-125/ses-01/mov/sub-125_ses-01_task-szMonitoring_run-37_mov.*"
+
+echo "Bitti. İndirilen dosya sayısı:"
+find seizeit2 -name "*.edf" | wc -l
+du -sh seizeit2

@@ -1,0 +1,11 @@
+# Kişisel veri ve çıktılar repoya girmez (KVKK)
+veri/
+sonuc/
+seizeit2_veri/
+seizeit2/sub-*/
+*.csv
+*.edf
+*.joblib
+*.png
+__pycache__/
+.DS_Store
